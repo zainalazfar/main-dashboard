@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, Monitor, Apple, Globe, Download, ArrowRight } from 'lucide-react';
+import { X, Monitor, Apple, Globe, Download, ArrowRight, ExternalLink } from 'lucide-react';
 
 export default function SnapTaskPreviewModal({ onClose }) {
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function SnapTaskPreviewModal({ onClose }) {
         <div className="modal-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
             <span style={{ fontSize: '1.25rem' }}>⚡</span>
-            <h3 style={{ fontSize: '1.2rem', margin: 0, fontWeight: 700 }}>SnapTask Free</h3>
+            <h3 style={{ fontSize: '1.2rem', margin: 0, fontWeight: 700 }}>SnapTask</h3>
           </div>
           <button className="modal-close-btn" onClick={onClose} aria-label="Close modal">
             <X size={18} />
@@ -40,7 +40,7 @@ export default function SnapTaskPreviewModal({ onClose }) {
             <div className="snaptask-logo-box">
               <img
                 src="/snaptask-logo.png"
-                alt="SnapTask Free Logo"
+                alt="SnapTask Logo"
                 className="snaptask-box-img"
               />
             </div>
@@ -79,19 +79,19 @@ export default function SnapTaskPreviewModal({ onClose }) {
                 </div>
               </button>
 
-              {/* Line 3: PWA */}
+              {/* Line 3: Open in Chrome */}
               <button
                 className="download-line-btn"
-                onClick={() => handleDownload('SnapTask-PWA.zip', '/downloads/SnapTask-PWA.zip')}
+                onClick={() => window.open('/snaptask', '_blank')}
               >
                 <div className="download-line-left">
                   <div className="download-line-icon">
                     <Globe size={18} />
                   </div>
-                  <span className="download-line-text">Open / Install PWA</span>
+                  <span className="download-line-text">Open in Chrome</span>
                 </div>
                 <div className="download-line-action">
-                  <Download size={16} />
+                  <ExternalLink size={16} />
                 </div>
               </button>
             </div>

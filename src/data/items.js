@@ -9,7 +9,7 @@ export const CATEGORIES = [
 export const ITEMS = [
   {
     id: 'snaptask-free',
-    title: 'SnapTask Free',
+    title: 'SnapTask',
     category: 'apps',
     status: 'Live',
     price: 'Free',

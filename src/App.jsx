@@ -197,7 +197,7 @@ export default function App() {
               onClick={(e) => { e.preventDefault(); setIsSnapTaskPreviewOpen(true); }}
               className="footer-link"
             >
-              SnapTask Free
+              SnapTask
             </a>
             <span style={{ opacity: 0.3 }}>•</span>
             <button
