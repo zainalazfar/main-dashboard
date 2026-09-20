@@ -18,6 +18,7 @@ export const ITEMS = [
     featured: true,
     tags: ['Desktop App', 'PWA', 'Excel Export', 'Task Manager'],
     emoji: '⚡',
+    image: '/snaptask-logo.png',
     badgeClass: 'badge-apps',
     specs: [
       { key: 'Platform', val: 'Windows Desktop & Web' },

@@ -24,10 +24,7 @@ export default function SnapTaskPreviewModal({ onClose }) {
       <div className="modal-dialog modal-download-layout" onClick={(e) => e.stopPropagation()}>
         {/* Modal Header */}
         <div className="modal-header">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-            <span style={{ fontSize: '1.25rem' }}>⚡</span>
-            <h3 style={{ fontSize: '1.2rem', margin: 0, fontWeight: 700 }}>SnapTask</h3>
-          </div>
+          <h3 style={{ fontSize: '1.2rem', margin: 0, fontWeight: 700 }}>SnapTask</h3>
           <button className="modal-close-btn" onClick={onClose} aria-label="Close modal">
             <X size={18} />
           </button>
@@ -42,6 +39,9 @@ export default function SnapTaskPreviewModal({ onClose }) {
                 src="/snaptask-logo.png"
                 alt="SnapTask Logo"
                 className="snaptask-box-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
               />
             </div>
 

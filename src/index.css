@@ -715,7 +715,17 @@ h1, h2, h3, h4, h5, h6 {
   user-select: none;
 }
 
-.showcase-card:hover .card-media-icon {
+.card-media-img {
+  width: 108px;
+  height: 108px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
+  transition: transform var(--transition-base);
+  user-select: none;
+}
+
+.showcase-card:hover .card-media-icon,
+.showcase-card:hover .card-media-img {
   transform: scale(1.1);
 }
 

@@ -15,7 +15,15 @@ export default function ShowcaseCard({ item, onClick }) {
     <div className="showcase-card" onClick={onClick}>
       {/* Media / Top Banner */}
       <div className="card-media-banner">
-        <span className="card-media-icon">{item.emoji}</span>
+        {item.image ? (
+          <img
+            src={item.image}
+            alt={item.title}
+            className="card-media-img"
+          />
+        ) : (
+          <span className="card-media-icon">{item.emoji}</span>
+        )}
         
         <span className={`card-category-badge ${item.badgeClass}`}>
           {getCategoryLabel()}
