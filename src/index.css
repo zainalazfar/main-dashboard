@@ -127,10 +127,16 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-.gradient-text {
+.gradient-text,
+.gradient-text-gold {
   background: var(--brand-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-title-digital {
+  color: rgba(255, 255, 255, 0.7);
   display: inline-block;
 }
 
@@ -385,13 +391,19 @@ h1, h2, h3, h4, h5, h6 {
 .hero-title {
   font-size: 2.5rem;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.2;
   letter-spacing: -0.03em;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.65rem;
   }
 }
 
