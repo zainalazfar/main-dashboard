@@ -8,6 +8,35 @@ export const CATEGORIES = [
 
 export const ITEMS = [
   {
+    id: 'cad-catalog',
+    title: 'CAD Catalog',
+    category: 'apps',
+    status: 'Live',
+    price: 'Free',
+    shortDesc: 'Corporate standard parts governance & 3D STEP catalog.',
+    longDesc: 'Standard parts catalog designed for mechanical engineering teams. Features WebAssembly-powered 3D STEP thumbnails, strict folder/CAD separation, AVL preferred supplier enforcement, and ISO-10303-21 header metadata injection for native Creo, NX, and SolidWorks CAD workflows.',
+    featured: true,
+    tags: ['Web App', '3D CAD', 'STEP AP214', 'Open CASCADE', 'Three.js'],
+    emoji: '📐',
+    image: '/cad-catalog-logo.svg',
+    badgeClass: 'badge-apps',
+    specs: [
+      { key: 'Platform', val: 'Web & Desktop (Windows/Linux)' },
+      { key: '3D Engine', val: 'Three.js + Open CASCADE (WASM)' },
+      { key: 'Format', val: 'ISO-10303-21 STEP (.stp)' },
+      { key: 'CAD Compatibility', val: 'PTC Creo, Siemens NX, SolidWorks' }
+    ],
+    highlights: [
+      'Real-time 3D STEP thumbnail generation via WebAssembly',
+      'Dynamic folder inheritance & standard part isolation',
+      'Direct metadata injection in STEP headers (Part #, Material, AVL)',
+      '1-Click direct STEP download without modal interruptions'
+    ],
+    primaryActionText: 'Launch App',
+    actionType: 'cad-catalog-preview',
+    localPath: 'c:\\Users\\Azfar\\Desktop\\CAD Catalog'
+  },
+  {
     id: 'snaptask-free',
     title: 'SnapTask',
     category: 'apps',

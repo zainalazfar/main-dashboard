@@ -5,6 +5,7 @@ import CategoryFilter from './components/CategoryFilter.jsx';
 import ShowcaseCard from './components/ShowcaseCard.jsx';
 import DetailModal from './components/DetailModal.jsx';
 import SnapTaskPreviewModal from './components/SnapTaskPreviewModal.jsx';
+import CadCatalogPreviewModal from './components/CadCatalogPreviewModal.jsx';
 import ContactModal from './components/ContactModal.jsx';
 import { ITEMS, CREATOR_INFO } from './data/items.js';
 import { Layers } from 'lucide-react';
@@ -17,6 +18,7 @@ export default function App() {
   // Modals state
   const [activeDetailItem, setActiveDetailItem] = useState(null);
   const [isSnapTaskPreviewOpen, setIsSnapTaskPreviewOpen] = useState(false);
+  const [isCadCatalogPreviewOpen, setIsCadCatalogPreviewOpen] = useState(false);
   const [contactModalConfig, setContactModalConfig] = useState({ isOpen: false, subject: '' });
 
   // Permanently lock dark theme
@@ -69,7 +71,9 @@ export default function App() {
   }, [searchQuery, selectedCategory, sortBy]);
 
   const handleCardClick = (item) => {
-    if (item.id === 'snaptask-free') {
+    if (item.id === 'cad-catalog') {
+      setIsCadCatalogPreviewOpen(true);
+    } else if (item.id === 'snaptask-free') {
       setIsSnapTaskPreviewOpen(true);
     } else {
       setActiveDetailItem(item);
@@ -194,6 +198,14 @@ export default function App() {
             <span style={{ opacity: 0.3 }}>•</span>
             <a
               href="#"
+              onClick={(e) => { e.preventDefault(); setIsCadCatalogPreviewOpen(true); }}
+              className="footer-link"
+            >
+              CAD Catalog
+            </a>
+            <span style={{ opacity: 0.3 }}>•</span>
+            <a
+              href="#"
               onClick={(e) => { e.preventDefault(); setIsSnapTaskPreviewOpen(true); }}
               className="footer-link"
             >
@@ -211,6 +223,13 @@ export default function App() {
         </div>
       </footer>
 
+      {/* CAD Catalog Dedicated Preview Modal */}
+      {isCadCatalogPreviewOpen && (
+        <CadCatalogPreviewModal
+          onClose={() => setIsCadCatalogPreviewOpen(false)}
+        />
+      )}
+
       {/* SnapTask Dedicated Preview Modal */}
       {isSnapTaskPreviewOpen && (
         <SnapTaskPreviewModal
@@ -224,7 +243,10 @@ export default function App() {
           item={activeDetailItem}
           onClose={() => setActiveDetailItem(null)}
           onAction={(item) => {
-            if (item.actionType === 'snaptask-preview') {
+            if (item.actionType === 'cad-catalog-preview') {
+              setActiveDetailItem(null);
+              setIsCadCatalogPreviewOpen(true);
+            } else if (item.actionType === 'snaptask-preview') {
               setActiveDetailItem(null);
               setIsSnapTaskPreviewOpen(true);
             } else if (item.actionType === 'contact-modal') {
