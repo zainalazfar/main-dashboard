@@ -54,22 +54,6 @@ export default function CadCatalogPreviewModal({ onClose }) {
                   <ExternalLink size={16} />
                 </div>
               </button>
-
-              {/* Line 2: View GitHub Repository */}
-              <button
-                className="download-line-btn"
-                onClick={() => window.open('https://github.com/zainalazfar/cad-catalog', '_blank')}
-              >
-                <div className="download-line-left">
-                  <div className="download-line-icon" style={{ color: '#a78bfa', background: 'rgba(167, 139, 250, 0.12)' }}>
-                    <Github size={18} />
-                  </div>
-                  <span className="download-line-text">View Source on GitHub</span>
-                </div>
-                <div className="download-line-action">
-                  <ExternalLink size={16} />
-                </div>
-              </button>
             </div>
           </div>
         </div>
